@@ -42,9 +42,6 @@ export const fetchStudentDetails = () => async dispatch => {
 export const toggleFlag = toggleVal => async dispatch => {
   dispatch(loadingStarted())
   try {
-    // await axios.post('/api/ciam' + '/ciam/v1/login/mfa-optin', {
-    //   flag: toggleMfaVal
-    // })
     if (toggleVal) dispatch(showNotification([{ message: 'Successfully opted for accomodation' }]))
 
     dispatch(successOccured('toggleFlag'))
