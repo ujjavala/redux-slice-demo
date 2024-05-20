@@ -1,0 +1,4 @@
+node_modules/*
+dist/*
+webpack-development.config.js
+webpack-production.config.js
