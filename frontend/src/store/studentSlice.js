@@ -28,8 +28,8 @@ export const slice = createSlice({
 
     detailsFetched(state, action) {
       const subjects = action.payload?.subjects
-      const stemCourses = subjects?.find(authenticator => authenticator.id.includes('stem'))
-      const nonStemCourses = subjects?.find(authenticator => !authenticator.id.includes('stem'))
+      const stemCourses = subjects?.find(subject => subject.id.includes('stem'))
+      const nonStemCourses = subjects?.find(subject => !subject.id.includes('stem'))
 
       state.subjects.stem.specialization = stemCourses?.name.toString()
       state.subjects.nonStem.specialization = nonStemCourses?.name.toString()

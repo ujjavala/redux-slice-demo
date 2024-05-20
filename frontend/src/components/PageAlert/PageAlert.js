@@ -4,7 +4,7 @@ import styles from './PageAlert.module.scss'
 const PageAlert = ({ notification }) => {
   return (
     <div>
-      {notification.map((item, index) => {
+      {notification.map((item) => {
         return (
           Object.keys(item).length && (
             <div className={styles.alert}>

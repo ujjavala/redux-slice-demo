@@ -1,12 +1,11 @@
-import axios from 'axios'
 
 import { GENERIC_ERROR_ALERT_TITLE } from '../lib/constants'
 import {
+  detailsFetched,
   errorOccured,
+  flagToggled,
   loadingFinished,
   loadingStarted,
-  detailsFetched,
-  flagToggled,
   notificationShown,
   successOccured
 } from '../store/studentSlice'
@@ -15,16 +14,19 @@ export const fetchStudentDetails = () => async dispatch => {
   dispatch(loadingStarted())
   try {
     const response = {
-      'student_name': 'Spider Man',
+      'student_name': 'John Doe',
       'student_id': '1210310252',
       'flag': true,
       'subjects': [
         {
           'id': 'stem|101',
-          'authenticator_type': 'maths',
           'enrolled': true,
-          'oob_channel': 'maths',
           'name': 'Engineering Maths'
+        },
+        {
+          'id': 'arts|101',
+          'enrolled': true,
+          'name': 'Fine Arts'
         },
       ]
     }
@@ -43,9 +45,9 @@ export const toggleFlag = toggleVal => async dispatch => {
   dispatch(loadingStarted())
   try {
     if (toggleVal) dispatch(showNotification([{ message: 'Successfully opted for accomodation' }]))
-
+    if (!toggleVal) dispatch(showNotification([{ message: 'Successfully opted out of accomodation' }]))
     dispatch(successOccured('toggleFlag'))
-    dispatch(flagToggled(toggleVal))
+    dispatch(flagToggled(!toggleVal))
   } catch (e) {
     console.log('error', e)
     dispatch(errorOccured('toggleFlag'))
