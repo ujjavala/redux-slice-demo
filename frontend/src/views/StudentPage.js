@@ -42,8 +42,8 @@ const StudentPage = () => {
                         </div>
                     </div>
                 </div>
-                <span> <h3>Opt for accomodation</h3>{!isFlagOpted && (<i onClick={toggleCourse} className="fa fa-thumbs-up"></i>)}
-                    {isFlagOpted && (<i onClick={toggleCourse} className="fa fa-thumbs-down"></i>)}</span>
+                <span> {<h3>Opt in for accomodation</h3> && !isFlagOpted && (<i data-testid="ToggleButton" onClick={toggleCourse} className="fa fa-thumbs-up"></i>)}
+                    {<h3>Opt out of accomodation</h3> && isFlagOpted && (<i onClick={toggleCourse} className="fa fa-thumbs-down"></i>)}</span>
 
             </div>
         </div>

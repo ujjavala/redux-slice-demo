@@ -8,11 +8,7 @@ describe('Test specs for the App component', () => {
   let store
   const mockStore = configureStore([])
   beforeEach(() => {
-    store = mockStore({
-      device: {
-        isMobile: false
-      }
-    })
+    store = mockStore({})
   })
   it('Should render App component', () => {
     const { container } = render(
