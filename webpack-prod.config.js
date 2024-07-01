@@ -11,12 +11,6 @@ module.exports = merge(commonConfig, {
   },
 
   plugins: [
-    new ESLintPlugin({
-      emitError: true,
-      emitWarning: true,
-      failOnError: false,
-      failOnWarning: false
-    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       minify: {
